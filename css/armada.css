@@ -60,6 +60,7 @@ body.dark-mode #search-input {
 
 .price-filter input[type=number] {
     -moz-appearance: textfield;
+    appearance: none;
 }
 
 body.dark-mode .price-filter input[type="number"] {
