@@ -4,7 +4,7 @@ const kendaraanData = [
     nama: 'Toyota Avanza',
     tipe: 'MPV',
     harga: 350000,
-    gambar: 'avanza.png',
+    gambar: 'avanza.jpg',
     deskripsi: 'Mobil keluarga andalan yang irit dan nyaman untuk perjalanan jauh maupun dalam kota. Kapasitas hingga 7 penumpang.',
     spesifikasi: {
       transmisi: 'Manual',
@@ -19,7 +19,7 @@ const kendaraanData = [
     nama: 'Honda Brio',
     tipe: 'City Car',
     harga: 250000,
-    gambar: 'brio.png',
+    gambar: 'brio.jpg',
     deskripsi: 'Lincah dan efisien, cocok untuk mobilitas tinggi di perkotaan. Desain sporty dan modern.',
     spesifikasi: {
       transmisi: 'Automatic',
@@ -34,7 +34,7 @@ const kendaraanData = [
     nama: 'Mitsubishi Pajero Sport',
     tipe: 'SUV',
     harga: 800000,
-    gambar: 'pajero.png',
+    gambar: 'pajero.jpg',
     deskripsi: 'SUV tangguh dengan performa tinggi untuk segala medan. Memberikan kesan gagah dan kemewahan.',
     spesifikasi: {
       transmisi: 'Automatic',
@@ -49,7 +49,7 @@ const kendaraanData = [
     nama: 'Daihatsu Xenia',
     tipe: 'MPV',
     harga: 325000,
-    gambar: 'xenia.png',
+    gambar: 'xenia.jpg',
     deskripsi: 'Pilihan ekonomis untuk kebutuhan keluarga. Kabin luas dan konsumsi bahan bakar yang efisien.',
     spesifikasi: {
       transmisi: 'Manual',
