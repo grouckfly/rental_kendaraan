@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Kendaraan - Rental Kendaraan XYZ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">RentalXYZ</a>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="armada.html">Armada</a></li>
+          <li><a href="index.html#review">Review</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-extra">
+            <button id="dark-mode-toggle">🌙</button>
+            <div class="menu-toggle">☰</div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="spesifikasi-detail">
+      <div class="container" id="detail-kendaraan">
+        </div>
+    </section>
+
+    <section id="booking-form-section">
+      <div class="container">
+        <h2 class="section-title">Formulir <span>Pemesanan</span></h2>
+        <div class="form-container">
+          <form id="booking-form" novalidate>
+            <input type="hidden" id="vehicle-name" name="vehicle-name">
+            <div class="form-group">
+                <label for="booking-nama">Nama Lengkap</label>
+                <input type="text" id="booking-nama" name="nama" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="booking-telp">No. Telepon/WhatsApp</label>
+                <input type="tel" id="booking-telp" name="telepon" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="booking-mulai">Tanggal Mulai Rental</label>
+                <input type="date" id="booking-mulai" name="tanggal-mulai" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="booking-selesai">Tanggal Selesai Rental</label>
+                <input type="date" id="booking-selesai" name="tanggal-selesai" required>
+                <div class="error-message"></div>
+            </div>
+            <button type="submit" class="btn btn-whatsapp" style="width: 100%;">Pesan via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 RentalXYZ. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/data-kendaraan.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

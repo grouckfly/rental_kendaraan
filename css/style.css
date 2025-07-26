@@ -1,0 +1,415 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --bg-color-light: #f5f5f5;
+  --text-color-light: #333;
+  --card-bg-light: #ffffff;
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --border-color-light: #ddd;
+
+  --bg-color-dark: #1a1a1a;
+  --text-color-dark: #f0f0f0;
+  --card-bg-dark: #2c2c2c;
+  --border-color-dark: #444;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--card-bg-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode header {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color-light);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+body.dark-mode .nav-links a {
+    color: var(--text-color-dark);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary-color);
+}
+
+.nav-extra {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#dark-mode-toggle {
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-color-light);
+}
+body.dark-mode #dark-mode-toggle {
+    color: var(--text-color-dark);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Sections */
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.section-title span {
+  color: var(--primary-color);
+}
+
+/* Home Section */
+#home {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+}
+.home-content {
+  max-width: 600px;
+}
+.home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.home-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Card Style (Armada & Review) */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background-color: var(--card-bg-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  border: 1px solid var(--border-color-light);
+}
+
+body.dark-mode .card {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-color: var(--border-color-dark);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+.card-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+.card-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+.card-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Review Card */
+.review-card .card-content {
+    position: relative;
+    padding-top: 40px;
+}
+.review-card .reviewer-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    border: 3px solid var(--bg-color-light);
+}
+body.dark-mode .review-card .reviewer-photo {
+    border-color: var(--bg-color-dark);
+}
+.reviewer-name {
+    font-weight: 600;
+}
+
+/* Contact & Forms */
+.form-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  background-color: var(--card-bg-light);
+  border-radius: 8px;
+  border: 1px solid var(--border-color-light);
+}
+
+body.dark-mode .form-container {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-color-dark);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color-light);
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  font-size: 1rem;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+  border-color: var(--border-color-dark);
+  background-color: #333;
+  color: var(--text-color-dark);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.contact-buttons .btn {
+    flex-grow: 1;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+}
+.btn-whatsapp:hover {
+    background-color: #1EBE57;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Armada Page */
+#armada-list {
+    min-height: 70vh;
+}
+
+/* Spesifikasi Page */
+#detail-kendaraan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+#detail-kendaraan img {
+    width: 100%;
+    border-radius: 10px;
+}
+.specs-list {
+    list-style: none;
+    margin-top: 15px;
+}
+.specs-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color-light);
+    display: flex;
+    justify-content: space-between;
+}
+body.dark-mode .specs-list li {
+    border-color: var(--border-color-dark);
+}
+.specs-list li:last-child {
+    border-bottom: none;
+}
+.specs-list span {
+    font-weight: 600;
+}
+#booking-form-section {
+    padding-top: 0;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+body.dark-mode footer {
+    background-color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 10;
+  }
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: var(--card-bg-light);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px 0;
+  }
+  body.dark-mode .nav-links {
+    background-color: var(--card-bg-dark);
+  }
+  .nav-links.active {
+    transform: translateX(0);
+  }
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+  #home {
+    text-align: center;
+  }
+  #detail-kendaraan {
+    grid-template-columns: 1fr;
+  }
+}
