@@ -13,11 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  /**
-   * ===============================================
-   * FUNGSI BARU: Menyesuaikan padding konten utama.
-   * ===============================================
-   */
   const adjustMainContentPadding = () => {
     const headerElement = document.querySelector('header');
     const mainElement = document.querySelector('main');
@@ -28,45 +23,57 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const setupHeaderLogic = () => {
-    // --- DARK MODE LOGIC ---
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
-    const isDarkModeStored = localStorage.getItem('darkMode') === 'enabled';
-    if (isDarkModeStored) {
-      body.classList.add('dark-mode');
-      if (darkModeToggle) darkModeToggle.innerHTML = '☀️';
-    } else {
-      if (darkModeToggle) darkModeToggle.innerHTML = '🌙';
-    }
-    if (darkModeToggle) {
-      darkModeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        const isDarkMode = body.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-        darkModeToggle.innerHTML = isDarkMode ? '☀️' : '🌙';
-      });
-    }
-
-    // --- MOBILE MENU LOGIC ---
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
-      });
+
+    // Dark Mode Logic
+    if (darkModeToggle) {
+        const isDarkModeStored = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkModeStored) {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '☀️';
+        } else {
+            darkModeToggle.innerHTML = '🌙';
+        }
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            darkModeToggle.innerHTML = isDarkMode ? '☀️' : '🌙';
+        });
     }
 
-    // --- ACTIVE NAV LINK LOGIC ---
+    // Mobile Menu Toggle Logic
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        const navLinkItems = navLinks.querySelectorAll('a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', () => {
+                // Hanya jalankan jika menu sedang aktif/terbuka
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '☰';
+                }
+            });
+        });
+    }
+
+    // Active Nav Link Logic
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const links = document.querySelectorAll('.nav-links a');
     links.forEach(link => {
-      const linkPage = link.getAttribute('href').split('/').pop();
-      if (linkPage === currentPage) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+        const linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
 
     // Panggil fungsi penyesuaian padding setelah header ada
