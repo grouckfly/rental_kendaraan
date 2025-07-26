@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Armada Kami - Rental Kendaraan XYZ</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/armada.css">
+  <link rel="stylesheet" href="css/modals.css">
 </head>
-<body>
 
-  <header>
-    <div class="container">
-      <nav>
-        <a href="index.html" class="logo">RentalXYZ</a>
-        <ul class="nav-links">
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="armada.html" class="active">Armada</a></li>
-          <li><a href="index.html#review">Review</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <div class="nav-extra">
-            <button id="dark-mode-toggle">🌙</button>
-            <div class="menu-toggle">☰</div>
-        </div>
-      </nav>
-    </div>
-  </header>
+<body>
+  <div id="header-placeholder"></div>
 
   <main>
     <section id="armada-list">
       <div class="container">
         <h2 class="section-title">Pilihan <span>Armada</span> Kami</h2>
-
         <div class="filter-container">
           <div class="search-wrapper">
             <input type="search" id="search-input" placeholder="Cari nama, tipe, atau transmisi...">
@@ -43,11 +27,8 @@
             <input type="number" id="max-price" placeholder="Harga Maks">
           </div>
         </div>
-        
-        <div class="card-container" id="armada-list-container">
-          </div>
-
-        <div id="no-results" style="text-align: center; display: none; margin-top: 40px;">
+        <div class="card-container" id="armada-list-container"></div>
+        <div id="no-results">
           <h3>Maaf, kendaraan tidak ditemukan.</h3>
           <p>Coba ubah kata kunci pencarian atau rentang harga Anda.</p>
         </div>
@@ -55,13 +36,12 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 RentalXYZ. All Rights Reserved.</p>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+  <div id="modals-placeholder"></div>
 
   <script src="js/data-kendaraan.js"></script>
+  <script src="js/include.js"></script>
   <script src="js/armada.js"></script>
 </body>
+
 </html>

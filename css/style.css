@@ -251,7 +251,8 @@ body.dark-mode .form-container {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
   padding: 12px;
   border-radius: 5px;
@@ -262,7 +263,8 @@ body.dark-mode .form-container {
 }
 
 body.dark-mode .form-group input,
-body.dark-mode .form-group textarea {
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
   border-color: var(--border-color-dark);
   background-color: #333;
   color: var(--text-color-dark);

@@ -1,33 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- LOGIKA UMUM (DARK MODE & MOBILE MENU) ---
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const body = document.body;
-  if (localStorage.getItem("darkMode") === "enabled") {
-    body.classList.add("dark-mode");
-    darkModeToggle.innerHTML = "☀️";
-  } else {
-    darkModeToggle.innerHTML = "🌙";
-  }
-  darkModeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("darkMode", "enabled");
-      darkModeToggle.innerHTML = "☀️";
-    } else {
-      localStorage.setItem("darkMode", "disabled");
-      darkModeToggle.innerHTML = "🌙";
-    }
-  });
-
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      menuToggle.innerHTML = navLinks.classList.contains("active") ? "✕" : "☰";
-    });
-  }
-
   // --- LOGIKA KHUSUS ARMADA.HTML ---
   const armadaListContainer = document.getElementById("armada-list-container");
   if (armadaListContainer && typeof kendaraanData !== "undefined") {
@@ -89,6 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     minPriceInput.addEventListener("input", filterAndRenderArmada);
     maxPriceInput.addEventListener("input", filterAndRenderArmada);
 
-    filterAndRenderArmada(); // Panggil pertama kali untuk render semua
+    filterAndRenderArmada();
   }
 });

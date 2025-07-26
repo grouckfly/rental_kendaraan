@@ -52,7 +52,6 @@ body.dark-mode #search-input {
     color: var(--text-color-light);
 }
 
-/* Menghilangkan panah di input number */
 .price-filter input::-webkit-outer-spin-button,
 .price-filter input::-webkit-inner-spin-button {
     -webkit-appearance: none;

@@ -1,33 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- LOGIKA UMUM (DARK MODE & MOBILE MENU) ---
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const body = document.body;
-  if (localStorage.getItem("darkMode") === "enabled") {
-    body.classList.add("dark-mode");
-    darkModeToggle.innerHTML = "☀️";
-  } else {
-    darkModeToggle.innerHTML = "🌙";
-  }
-  darkModeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("darkMode", "enabled");
-      darkModeToggle.innerHTML = "☀️";
-    } else {
-      localStorage.setItem("darkMode", "disabled");
-      darkModeToggle.innerHTML = "🌙";
-    }
-  });
-
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      menuToggle.innerHTML = navLinks.classList.contains("active") ? "✕" : "☰";
-    });
-  }
-
   // --- LOGIKA KHUSUS SPESIFIKASI.HTML ---
   const detailContainer = document.getElementById("detail-kendaraan");
   if (detailContainer && typeof kendaraanData !== "undefined") {
@@ -61,9 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
 
       const vehicleNameInput = document.getElementById("vehicle-name");
-      if (vehicleNameInput) {
-        vehicleNameInput.value = kendaraan.nama;
-      }
+      if (vehicleNameInput) vehicleNameInput.value = kendaraan.nama;
     } else {
       detailContainer.innerHTML = `<p>Kendaraan tidak ditemukan. Silakan kembali ke <a href="armada.html">halaman armada</a>.</p>`;
       document.getElementById("booking-form-section").style.display = "none";
@@ -76,8 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       let isValid = true;
-      const inputs = bookingForm.querySelectorAll("[required]");
-      inputs.forEach((input) => {
+      bookingForm.querySelectorAll("[required]").forEach((input) => {
         const errorElement = input.nextElementSibling;
         if (input.value.trim() === "") {
           isValid = false;
@@ -106,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         )}`,
         "_blank"
       );
+      showConfirmationModal();
     });
   }
 });
