@@ -225,6 +225,11 @@ body.dark-mode .card:hover {
   margin-bottom: 15px;
 }
 
+.review-card{
+  overflow: visible;
+  margin-bottom: 15px;
+}
+
 /* Forms (Umum) */
 .form-container {
   max-width: 700px;
