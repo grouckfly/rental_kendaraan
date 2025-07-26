@@ -1,0 +1,47 @@
+#detail-kendaraan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+#detail-kendaraan img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.specs-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.specs-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color-light);
+    display: flex;
+    justify-content: space-between;
+}
+
+body.dark-mode .specs-list li {
+    border-color: var(--border-color-dark);
+}
+
+.specs-list li:last-child {
+    border-bottom: none;
+}
+
+.specs-list span {
+    font-weight: 600;
+}
+
+#booking-form-section {
+    padding-top: 0;
+}
+
+/* Responsive khusus halaman spesifikasi */
+@media (max-width: 768px) {
+    #detail-kendaraan {
+        grid-template-columns: 1fr;
+    }
+}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Armada Kami - Rental Kendaraan XYZ</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/armada.css">
 </head>
 <body>
 
@@ -31,8 +32,25 @@
     <section id="armada-list">
       <div class="container">
         <h2 class="section-title">Pilihan <span>Armada</span> Kami</h2>
+
+        <div class="filter-container">
+          <div class="search-wrapper">
+            <input type="search" id="search-input" placeholder="Cari nama, tipe, atau transmisi...">
+          </div>
+          <div class="price-filter">
+            <input type="number" id="min-price" placeholder="Harga Min">
+            <span>-</span>
+            <input type="number" id="max-price" placeholder="Harga Maks">
+          </div>
+        </div>
+        
         <div class="card-container" id="armada-list-container">
           </div>
+
+        <div id="no-results" style="text-align: center; display: none; margin-top: 40px;">
+          <h3>Maaf, kendaraan tidak ditemukan.</h3>
+          <p>Coba ubah kata kunci pencarian atau rentang harga Anda.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -44,6 +62,6 @@
   </footer>
 
   <script src="js/data-kendaraan.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/armada.js"></script>
 </body>
 </html>
